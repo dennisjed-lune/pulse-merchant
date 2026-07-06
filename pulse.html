@@ -685,6 +685,94 @@ tbody tr.rowlink:hover { background: var(--neutral-25); }
 .tweaks .seg button.on { background: var(--accent); color: #fff; }
 .tweaks .divider { width: 1px; height: 26px; background: var(--border-subtle); }
 
+/* ---------- Region / account switcher ---------- */
+.region-switch { padding: var(--space-3) var(--space-5) var(--space-4); }
+.region-switch > label { display: block; font-size: 11px; font-weight: var(--weight-bold); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--text-tertiary); margin-bottom: var(--space-2); }
+.region-box { position: relative; display: flex; align-items: center; gap: var(--space-2); border: var(--border-hairline) solid var(--border-default); border-radius: var(--radius-md); background: var(--bg-surface); padding: 0 var(--space-2) 0 var(--space-3); height: 42px; }
+.region-box:focus-within { border-color: var(--lune-emerald); box-shadow: 0 0 0 3px var(--focus-ring); }
+.region-box .region-dot { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px; background: var(--lune-emerald); }
+.region-box select { flex: 1; min-width: 0; appearance: none; border: none; outline: none; background: transparent; font: inherit; font-size: 13px; font-weight: var(--weight-semibold); color: var(--text-primary); cursor: pointer; padding: 0; height: 100%; }
+.region-box .region-chev { flex: none; color: var(--text-tertiary); display: flex; pointer-events: none; }
+.app[data-sidebar="ink"] .region-switch > label { color: rgba(255,255,255,0.55); }
+.app[data-sidebar="ink"] .region-box { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.14); }
+.app[data-sidebar="ink"] .region-box select { color: #fff; }
+.app[data-sidebar="ink"] .region-box select option { color: #1C1C1A; }
+.app[data-sidebar="ink"] .region-box .region-dot { background: var(--lune-mint); }
+.region-meta { display: flex; align-items: center; justify-content: space-between; gap: var(--space-2); margin-top: var(--space-2); }
+.region-cc { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: var(--weight-semibold); color: var(--text-secondary); }
+.region-cc .region-dot.sm { width: 8px; height: 8px; flex: 0 0 8px; }
+.region-lock { display: inline-flex; align-items: center; color: var(--text-tertiary); cursor: help; }
+.region-lock svg { width: 13px; height: 13px; }
+.app[data-sidebar="ink"] .region-cc { color: rgba(255,255,255,0.72); }
+.app[data-sidebar="ink"] .region-lock { color: rgba(255,255,255,0.45); }
+
+/* ---------- Settings & profile screens ---------- */
+.settings-card { padding: var(--space-6); margin-bottom: var(--space-4); }
+.sc-head h3 { font-size: var(--text-title1-size); font-weight: var(--weight-bold); color: var(--text-primary); }
+.sc-head p { margin-top: 2px; font-size: 13px; color: var(--text-tertiary); }
+.sc-head-row { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-4); }
+.sc-divider { height: 1px; background: var(--border-subtle); margin: var(--space-5) 0; }
+.logo-row { display: flex; gap: var(--space-4); align-items: center; margin-top: var(--space-4); }
+.logo-box { width: 92px; height: 92px; flex: 0 0 92px; border-radius: var(--radius-md); background: var(--surface-muted); border: var(--border-hairline) solid var(--border-subtle); display: flex; align-items: center; justify-content: center; color: var(--text-tertiary); }
+.lg-title { font-size: 14px; font-weight: var(--weight-semibold); color: var(--text-primary); }
+.lg-sub { font-size: 13px; color: var(--text-tertiary); margin-top: 2px; }
+.detail-cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-5) var(--space-8); }
+@media (max-width: 720px) { .detail-cols { grid-template-columns: 1fr; } }
+.field-ro { display: flex; flex-direction: column; gap: 6px; }
+.field-ro .lbl { font-size: 12px; color: var(--text-tertiary); font-weight: var(--weight-medium); }
+.field-ro .val { font-size: 14px; font-weight: var(--weight-semibold); color: var(--text-primary); }
+.field-ro a.val.link { color: var(--text-link); }
+.ro-pill { display: inline-flex; align-items: center; gap: 8px; align-self: flex-start; padding: 7px 12px; border: var(--border-hairline) solid var(--border-default); border-radius: var(--radius-sm); background: var(--bg-surface); font-size: 14px; font-weight: var(--weight-semibold); color: var(--text-primary); }
+.ro-pill svg { color: var(--text-tertiary); flex: none; }
+.ro-note { display: flex; align-items: center; gap: 8px; margin-top: var(--space-5); font-size: 12px; color: var(--text-tertiary); }
+.ro-note svg { flex: none; }
+.profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: var(--space-4); align-items: start; }
+.profile-grid .field-ro { margin-bottom: var(--space-4); }
+.pw-field { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--space-4); }
+.pw-field > label { font-size: 12px; color: var(--text-secondary); font-weight: var(--weight-medium); }
+.pw-box { display: flex; align-items: center; border: var(--border-hairline) solid var(--border-default); border-radius: var(--radius-md); height: 46px; overflow: hidden; background: var(--bg-surface); }
+.pw-box:focus-within { border-color: var(--lune-emerald); box-shadow: 0 0 0 3px var(--focus-ring); }
+.pw-box input { flex: 1; min-width: 0; border: none; outline: none; padding: 0 14px; font: inherit; font-size: 14px; background: transparent; height: 100%; color: var(--text-primary); }
+.pw-box button { padding: 0 12px; color: var(--text-tertiary); display: flex; align-items: center; }
+.pw-box button:hover { color: var(--text-primary); }
+.pw-rules { list-style: none; margin: 4px 0 var(--space-5); padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.pw-rules li { font-size: 12px; color: var(--text-tertiary); position: relative; padding-left: 16px; }
+.pw-rules li::before { content: ""; position: absolute; left: 3px; top: 6px; width: 5px; height: 5px; border-radius: 50%; background: var(--neutral-300); }
+.tm { display: inline-flex; align-items: center; gap: 10px; }
+.tm-av { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; background: var(--lune-teal); color: var(--lune-mint); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: var(--weight-bold); }
+.role-pill { font-size: 11px; font-weight: var(--weight-semibold); padding: 3px 10px; border-radius: var(--radius-pill); background: var(--surface-emerald); color: var(--lune-teal-700); }
+.linklike { color: var(--text-link); font: inherit; font-size: 12px; }
+.linklike:hover { text-decoration: underline; }
+.app[data-sidebar="ink"] .linklike { color: var(--lune-mint); }
+
+/* ---------- Brands manager (Merchant/POS IDs) ---------- */
+.brands-list { display: flex; flex-direction: column; gap: var(--space-3); margin-top: var(--space-4); }
+.brand-item { border: var(--border-hairline) solid var(--border-subtle); border-radius: var(--radius-md); padding: var(--space-4) var(--space-5); }
+.brand-item-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.brand-item-name { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: var(--weight-bold); color: var(--text-primary); }
+.brand-item-name .bd { width: 10px; height: 10px; border-radius: 50%; flex: 0 0 10px; }
+.brand-ids { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--space-4) var(--space-6); margin-top: var(--space-4); align-items: start; }
+@media (max-width: 720px) { .brand-ids { grid-template-columns: 1fr; } }
+.brand-ids .lbl { font-size: 12px; color: var(--text-tertiary); font-weight: var(--weight-medium); margin-bottom: 6px; }
+.brand-ids .lbl .hint { font-weight: var(--weight-regular); }
+.mid-input { width: 100%; border: var(--border-hairline) solid var(--border-default); border-radius: var(--radius-sm); padding: 8px 10px; font-family: var(--font-mono); font-size: 13px; font-weight: var(--weight-semibold); color: var(--text-primary); outline: none; background: var(--bg-surface); }
+.mid-input:focus { border-color: var(--lune-emerald); box-shadow: 0 0 0 3px var(--focus-ring); }
+.pos-chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.pos-chip { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: 12px; font-weight: var(--weight-semibold); padding: 4px 6px 4px 10px; border-radius: var(--radius-pill); background: var(--surface-emerald); color: var(--lune-teal-700); }
+.pos-chip .x { cursor: pointer; opacity: .55; font-size: 15px; line-height: 1; } .pos-chip .x:hover { opacity: 1; }
+.pos-inline { border: var(--border-hairline) dashed var(--border-default); border-radius: var(--radius-pill); padding: 4px 12px; font-family: var(--font-mono); font-size: 12px; color: var(--text-primary); outline: none; background: transparent; width: 130px; }
+.pos-inline:focus { border-color: var(--lune-emerald); border-style: solid; }
+.brands-empty { padding: var(--space-5); text-align: center; font-size: 13px; color: var(--text-tertiary); border: var(--border-hairline) dashed var(--border-default); border-radius: var(--radius-md); margin-top: var(--space-4); }
+.posadd-row { display: flex; gap: var(--space-2); align-items: center; }
+.posadd-row input { flex: 1; border: none; border-bottom: var(--border-hairline) solid var(--border-default); outline: none; padding: 8px 0; font: inherit; font-size: 14px; background: transparent; }
+.posadd-row input:focus { border-bottom-color: var(--lune-emerald); }
+.brand-logo-sm { width: 40px; height: 40px; flex: 0 0 40px; border-radius: var(--radius-sm); border: var(--border-hairline) solid var(--border-subtle); background: var(--bg-surface); display: inline-flex; align-items: center; justify-content: center; overflow: hidden; color: var(--text-tertiary); cursor: pointer; }
+.brand-logo-sm:hover { border-color: var(--lune-emerald); }
+.brand-logo-sm img { width: 100%; height: 100%; object-fit: contain; }
+.brand-logo-lg { width: 88px; height: 88px; border-radius: var(--radius-md); border: var(--border-hairline) dashed var(--border-default); background: var(--surface-muted); display: flex; align-items: center; justify-content: center; overflow: hidden; color: var(--text-tertiary); cursor: pointer; }
+.brand-logo-lg:hover { border-color: var(--lune-emerald); }
+.brand-logo-lg img { width: 100%; height: 100%; object-fit: contain; }
+
 /* ---------- Scrollbar ---------- */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-thumb { background: var(--neutral-200); border-radius: var(--radius-pill); border: 3px solid var(--bg-canvas); }
@@ -742,12 +830,16 @@ input, textarea { font-family: inherit; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
         Campaign Requests
       </button>
+      <button class="nav-item" data-nav="profile" id="nav-profile">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+        Profile
+      </button>
     </nav>
     <div class="sb-bottom">
       <div class="avatar">DJ</div>
       <div>
         <div class="name">Dennis Jedburgh</div>
-        <div class="sub">Marhaba Mart UAE · View profile</div>
+        <div class="sub"><span id="merchant-region">Chalhoub Group UAE</span> · <button class="linklike" data-nav="profile">View profile</button></div>
       </div>
     </div>
   </aside>
@@ -757,7 +849,7 @@ input, textarea { font-family: inherit; }
     <!-- ===== OVERVIEW ===== -->
     <section class="screen active" data-screen="overview">
       <div class="page-head">
-        <h1>Hello, Marhaba Mart</h1>
+        <h1 id="greeting">Hello, Chalhoub Group</h1>
         <p>Track your live campaigns and offer performance</p>
       </div>
       <div class="tabs" id="overview-tabs">
@@ -785,7 +877,7 @@ input, textarea { font-family: inherit; }
       <div class="back-head">
         <button class="back-btn" data-nav="campaign-requests" id="detail-back"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"></path></svg></button>
         <div>
-          <h1><span id="detail-title">Summer Grocery Cashback</span> <span id="detail-pill" class="pill-status ready"><span class="dot"></span>Recommendation ready</span></h1>
+          <h1><span id="detail-title">Level Shoes Season Launch</span> <span id="detail-pill" class="pill-status ready"><span class="dot"></span>Recommendation ready</span></h1>
           <p class="sub" id="detail-sub">Abu Dhabi Islamic Bank · 1 Jul – 31 Aug 2026</p>
         </div>
       </div>
@@ -793,19 +885,19 @@ input, textarea { font-family: inherit; }
         <div class="panel">
           <div class="preview-head">Customer Preview</div>
           <div class="preview-body">
-            <div class="preview-hero" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=70');"></div>
+            <div class="preview-hero" style="background-image: url('https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=70');"></div>
             <div class="merchant-row">
-              <div class="merchant-logo"><span class="cat-ic" data-icon="grocery" style="width: 18px; height: 18px; color: var(--lune-teal-700);"></span></div>
+              <div class="merchant-logo"><span class="cat-ic" data-icon="shopping" style="width: 18px; height: 18px; color: var(--lune-teal-700);"></span></div>
               <div>
-                <div class="mname">Marhaba Mart</div>
-                <div class="chips"><span class="chip">Grocery</span><span class="chip">Supermarket</span></div>
+                <div class="mname">Level Shoes</div>
+                <div class="chips"><span class="chip">Footwear</span><span class="chip">Fashion</span></div>
               </div>
             </div>
-            <h2>Get 10% cashback on grocery purchases</h2>
-            <p class="desc">Earn 10% back on every grocery purchase at Marhaba Mart, online or in-store, paid directly to your card at the end of each month.</p>
+            <h2>Get 10% cashback at Level Shoes</h2>
+            <p class="desc">Earn 10% back on every purchase at Level Shoes, online or in-store, paid directly to your card at the end of each month.</p>
             <ul class="terms">
-              <li>Cashback cap AED 300 per customer per campaign</li>
-              <li>Minimum spend of AED 200 per transaction</li>
+              <li>Cashback cap <span class="ccy">AED</span> 300 per customer per campaign</li>
+              <li>Minimum spend of <span class="ccy">AED</span> 200 per transaction</li>
               <li>30-day refund window applies</li>
               <li>Valid 1 Jul – 31 Aug 2026</li>
             </ul>
@@ -821,20 +913,20 @@ input, textarea { font-family: inherit; }
             <h4>Campaign Details</h4>
             <div class="bsub">Basic information about your campaign</div>
             <div class="kv"><span class="k">Goal</span><span class="v">Acquire new customers</span></div>
-            <div class="kv"><span class="k">Campaign Name</span><span class="v">Summer Grocery Cashback</span></div>
-            <div class="kv"><span class="k">Budget</span><span class="v">AED 200,000</span></div>
+            <div class="kv"><span class="k">Campaign Name</span><span class="v">Level Shoes Season Launch</span></div>
+            <div class="kv"><span class="k">Budget</span><span class="v"><span class="ccy">AED</span> 200,000</span></div>
           </div>
           <div class="req-block">
             <h4>Audience</h4>
             <div class="bsub">We'll reach customers who already shop in these categories</div>
-            <div class="kv"><span class="k">Categories</span><span class="kv-chips"><span class="c">Grocery</span><span class="c">Bakery</span><span class="c">Beverages</span></span></div>
+            <div class="kv"><span class="k">Categories</span><span class="kv-chips"><span class="c">Footwear</span><span class="c">Fashion</span><span class="c">Luxury</span></span></div>
           </div>
           <div class="req-block">
             <h4>Customer Info</h4>
             <div class="bsub">Key insights about your target customers</div>
             <div class="kv"><span class="k">Channel</span><span class="v">Online &amp; In-store</span></div>
-            <div class="kv"><span class="k">Avg purchase value</span><span class="v">AED 200</span></div>
-            <div class="kv"><span class="k">Average customer LTV</span><span class="v">AED 4,800</span></div>
+            <div class="kv"><span class="k">Avg purchase value</span><span class="v"><span class="ccy">AED</span> 200</span></div>
+            <div class="kv"><span class="k">Average customer LTV</span><span class="v"><span class="ccy">AED</span> 4,800</span></div>
           </div>
           <div class="req-block">
             <h4>Activity</h4>
@@ -852,7 +944,7 @@ input, textarea { font-family: inherit; }
       <div class="rec-head">
         <button class="rec-back" data-nav="campaign-requests"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"></path></svg></button>
         <div class="htxt">
-          <h1><span id="rec-title">Summer Grocery Cashback Campaign</span> <span class="pill-recready"><span class="dot"></span>Recommendations ready</span></h1>
+          <h1><span id="rec-title">Level Shoes Season Launch Campaign</span> <span class="pill-recready"><span class="dot"></span>Recommendations ready</span></h1>
           <button class="viewlink" onclick="openModal('modal-summary')">View your campaign requests</button>
         </div>
       </div>
@@ -874,11 +966,11 @@ input, textarea { font-family: inherit; }
               <div class="inp-row">
                 <div class="inp-field">
                   <label>Budget</label>
-                  <div class="inp-box"><input id="rec-budget" value="20,000" oninput="updateEstimate()"><span class="suffix">AED</span></div>
+                  <div class="inp-box"><input id="rec-budget" value="20,000" oninput="updateEstimate()"><span class="suffix ccy">AED</span></div>
                 </div>
                 <div class="inp-field">
                   <label>Minimum Transaction Value <span class="ginfo" tabindex="0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg><span class="tip tip-left">The minimum amount a customer needs to spend to be eligible for cashback.</span></span></label>
-                  <div class="inp-box"><input id="rec-mintxn" value="200" oninput="updateEstimate()"><span class="suffix">AED</span></div>
+                  <div class="inp-box"><input id="rec-mintxn" value="200" oninput="updateEstimate()"><span class="suffix ccy">AED</span></div>
                 </div>
                 <div class="inp-field">
                   <label>Cashback Percentage (%)</label>
@@ -886,7 +978,7 @@ input, textarea { font-family: inherit; }
                 </div>
                 <div class="inp-field">
                   <label>Cashback Cap <span class="ginfo" tabindex="0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg><span class="tip">This is the total cashback cap per customer for the entire campaign.</span></span></label>
-                  <div class="inp-box"><input value="300"><span class="suffix">AED</span></div>
+                  <div class="inp-box"><input value="300"><span class="suffix ccy">AED</span></div>
                 </div>
                 <div class="inp-field">
                   <label>Channel</label>
@@ -906,7 +998,7 @@ input, textarea { font-family: inherit; }
                   </div>
                   <div class="rdiv"></div>
                   <div class="ritem">
-                    <div class="rk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Potential Revenue <span class="ginfo" tabindex="0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg><span class="tip">This figure is illustrative only. It is calculated purely from the number of customers who meet your targeting criteria multiplied by the typical spend you provide. It is not based on market data, guaranteed outcomes, or historical performance. Actual revenue will depend on customer behaviour, redemption rates, and other factors outside of Lune's control.<b>Potential Reach × AED 200 minimum transaction value</b></span></span></div>
+                    <div class="rk"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><path d="M3 6h18"></path><path d="M16 10a4 4 0 0 1-8 0"></path></svg> Potential Revenue <span class="ginfo" tabindex="0"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4M12 8h.01"></path></svg><span class="tip">This figure is illustrative only. It is calculated purely from the number of customers who meet your targeting criteria multiplied by the typical spend you provide. It is not based on market data, guaranteed outcomes, or historical performance. Actual revenue will depend on customer behaviour, redemption rates, and other factors outside of Lune's control.<b>Potential Reach × <span class="ccy">AED</span> 200 minimum transaction value</b></span></span></div>
                     <div class="rv" id="rv-rev">AED 400,000 – AED 600,000</div>
                   </div>
                   <div class="rdiv"></div>
@@ -960,7 +1052,7 @@ input, textarea { font-family: inherit; }
                   </div>
                 </div>
                 <div class="field-line"><label>Offer Name</label><input id="rec-offer-name" value="10% Cashback on Shopping"></div>
-                <div class="field-line"><label>Description</label><textarea id="rec-offer-desc" rows="2">Reward members for every purchase across Marhaba Mart stores with an exclusive cashback offer.</textarea></div>
+                <div class="field-line"><label>Description</label><textarea id="rec-offer-desc" rows="2">Reward members for every purchase across Chalhoub Group stores with an exclusive cashback offer.</textarea></div>
                 <div class="date-row">
                   <div class="inp-field">
                     <label>Start Date</label>
@@ -985,15 +1077,15 @@ input, textarea { font-family: inherit; }
                   <div class="merchant-row">
                     <div class="merchant-logo" id="rec-prev-logo"><span class="cat-ic" data-icon="shopping" style="width:18px;height:18px;color:var(--lune-teal-700);"></span></div>
                     <div>
-                      <div class="mname">Marhaba Mart</div>
+                      <div class="mname">Chalhoub Group</div>
                       <div class="chips" id="rec-prev-chips"><span class="chip">Shopping</span><span class="chip">Retail</span></div>
                     </div>
                   </div>
                   <h2 id="rec-prev-title" style="font-size:18px;font-weight:var(--weight-bold);color:var(--lune-teal);margin-top:var(--space-3);">10% Cashback on Shopping</h2>
-                  <p class="desc" id="rec-prev-desc" style="margin-top:6px;font-size:13px;color:var(--text-secondary);">Reward members for every purchase across Marhaba Mart stores with an exclusive cashback offer.</p>
+                  <p class="desc" id="rec-prev-desc" style="margin-top:6px;font-size:13px;color:var(--text-secondary);">Reward members for every purchase across Chalhoub Group stores with an exclusive cashback offer.</p>
                   <ul class="terms">
-                    <li>Cashback cap AED 300 per customer per campaign</li>
-                    <li>Minimum spend of AED 200 per transaction</li>
+                    <li>Cashback cap <span class="ccy">AED</span> 300 per customer per campaign</li>
+                    <li>Minimum spend of <span class="ccy">AED</span> 200 per transaction</li>
                     <li>30-day refund window applies</li>
                     <li>Valid 15 May – 15 Jun 2026</li>
                   </ul>
@@ -1014,7 +1106,7 @@ input, textarea { font-family: inherit; }
       <div class="back-head">
         <button class="back-btn" data-nav="campaign-requests"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 18l-6-6 6-6"></path></svg></button>
         <div>
-          <h1><span id="empty-title">New Customer Acquisition — Q3</span> <span class="pill-status review"><span class="dot"></span>Under review</span></h1>
+          <h1><span id="empty-title">Faces Summer Beauty Bonus</span> <span class="pill-status review"><span class="dot"></span>Under review</span></h1>
           <p class="sub">Submitted 2 Jun 2026</p>
         </div>
       </div>
@@ -1081,7 +1173,7 @@ input, textarea { font-family: inherit; }
           <div class="wiz-step" data-step="7">
             <h2 class="wiz-q">What's your typical campaign budget?</h2>
             <p class="wiz-sub">Set your budget and we'll design the best campaign within it</p>
-            <div class="budget-amt">AED <span id="budget-val">50,000</span></div>
+            <div class="budget-amt"><span class="ccy">AED</span> <span id="budget-val">50,000</span></div>
             <div class="slider-wrap">
               <input type="range" min="30000" max="300000" step="10000" value="50000" oninput="document.getElementById('budget-val').textContent = Number(this.value).toLocaleString();">
               <div class="ticks"><span>30k</span><span>60k</span><span>90k</span><span>120k</span><span>150k</span><span>180k</span><span>210k</span><span>240k</span><span>270k</span><span>300k+</span></div>
@@ -1089,9 +1181,9 @@ input, textarea { font-family: inherit; }
           </div>
 
           <div class="wiz-step" data-step="8">
-            <h2 class="wiz-q">Give your campaign a name</h2>
-            <p class="wiz-sub">Optional, but useful — it makes the request easier to find later</p>
-            <input class="text-input" placeholder="e.g. Summer Grocery Cashback">
+            <h2 class="wiz-q">What should this offer be called?</h2>
+            <p class="wiz-sub">This is the campaign title customers will see — keep it clear and appealing</p>
+            <input class="text-input" placeholder="e.g. Level Shoes Season Launch">
           </div>
 
           <div class="wiz-step" data-step="9">
@@ -1120,6 +1212,92 @@ input, textarea { font-family: inherit; }
       </div>
     </section>
 
+    <!-- ===== PROFILE (account + merchant + brands + team) ===== -->
+    <section class="screen" data-screen="profile">
+      <div class="page-head"><h1>Profile</h1><p>Manage your account, merchant details, brands, and team.</p></div>
+
+      <div class="profile-grid" style="margin-bottom:var(--space-4);">
+        <div class="panel settings-card">
+          <div class="sc-head"><h3>My Profile</h3></div>
+          <div class="merchant-row" style="margin-top:var(--space-4);">
+            <div class="avatar">DJ</div>
+            <div><div class="mname" id="myp-email">dennis@chalhoubgroup.com</div><div class="chips"><span class="role-pill">Merchant</span></div></div>
+          </div>
+          <div class="sc-divider"></div>
+          <div class="field-ro"><span class="lbl">Merchant ID</span><span class="val">#12345</span></div>
+          <div class="field-ro"><span class="lbl">Role</span><span class="val">Owner · Full access</span></div>
+          <div class="field-ro"><span class="lbl">Created At</span><span class="val">16 Jun 2026</span></div>
+          <div class="field-ro" style="margin-bottom:0;"><span class="lbl">Updated At</span><span class="val">16 Jun 2026</span></div>
+        </div>
+
+        <div class="panel settings-card">
+          <div class="sc-head"><h3>Change password</h3></div>
+          <div style="margin-top:var(--space-4);">
+            <div class="pw-field"><label>Current password</label><div class="pw-box"><input type="password" placeholder="Enter current password"><button type="button" onclick="togglePw(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div></div>
+            <div class="pw-field"><label>New password</label><div class="pw-box"><input type="password" placeholder="Enter new password"><button type="button" onclick="togglePw(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div></div>
+            <ul class="pw-rules">
+              <li>Password must be at least 8 characters long</li>
+              <li>Password must contain at least one lowercase letter</li>
+              <li>Password must contain at least one uppercase letter</li>
+              <li>Password must contain at least one special character</li>
+            </ul>
+            <div class="pw-field"><label>Confirm new password</label><div class="pw-box"><input type="password" placeholder="Re-enter new password"><button type="button" onclick="togglePw(this)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></button></div></div>
+            <button class="btn btn-primary">Update Password</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel settings-card">
+        <div class="sc-head-row">
+          <div class="sc-head"><h3>Merchant details</h3><p>Your public-facing merchant information.</p></div>
+          <button class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit</button>
+        </div>
+        <div class="detail-cols" style="margin-top:var(--space-5);">
+          <div class="field-ro"><span class="lbl">Display name</span><span class="val" id="prof-name">Chalhoub Group</span></div>
+          <div class="field-ro"><span class="lbl">Website</span><a class="val link" href="#" onclick="return false;">https://www.chalhoubgroup.com</a></div>
+          <div class="field-ro"><span class="lbl">Region</span><span class="ro-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20"></path><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg><span id="prof-region">United Arab Emirates</span></span></div>
+          <div class="field-ro"><span class="lbl">Currency</span><span class="ro-pill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M14.6 9.4c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.5.9-2.5 2s1 1.6 2.5 2 2.6 1 2.6 2.1-1.1 2-2.6 2c-1.1 0-2.1-.5-2.6-1.4"></path><path d="M12 6.3v11.4"></path></svg><span class="ccy">AED</span></span></div>
+          <div class="field-ro"><span class="lbl">Status</span><span class="pill-status live" style="align-self:flex-start;"><span class="dot"></span>Active</span></div>
+        </div>
+        <div class="sc-divider"></div>
+        <div class="detail-cols">
+          <div class="field-ro"><span class="lbl">Created</span><span class="val">12 Aug 2023 · 09:24 GST</span></div>
+          <div class="field-ro"><span class="lbl">Last updated</span><span class="val">04 Jun 2026 · 14:08 GST</span></div>
+        </div>
+        <p class="ro-note"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="11" width="16" height="9" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg> Region and currency are set by Lune when your credentials are issued and can't be changed here.</p>
+      </div>
+
+      <div class="panel settings-card">
+        <div class="sc-head-row">
+          <div class="sc-head"><h3>Brands</h3><p>Brands you operate. Each brand carries its own Merchant ID and POS IDs, used to match qualifying transactions.</p></div>
+          <button class="btn btn-primary" onclick="openAddBrand()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M12 5v14M5 12h14"></path></svg> Add brand</button>
+        </div>
+        <div class="brands-list" id="brands-list"></div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="table-title">Team directory <span style="font-weight:var(--weight-regular);color:var(--text-tertiary);font-size:13px;">· Showing 1–8 of 24 members</span></div>
+        <table>
+          <thead><tr><th>Member</th><th>Role</th><th>Created at</th><th>Updated at</th></tr></thead>
+          <tbody>
+          <tr><td class="id"><span class="tm"><span class="tm-av">D</span>dennis@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>12 Aug 2023</td><td>12 Aug 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">M</span>mariam@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>03 Sep 2023</td><td>03 Sep 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">T</span>tomas@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>18 Sep 2023</td><td>18 Sep 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">L</span>lucas@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>27 Oct 2023</td><td>27 Oct 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">A</span>aisha.bello@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>09 Nov 2023</td><td>09 Nov 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">C</span>chen.wei@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>21 Nov 2023</td><td>21 Nov 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">S</span>sofia@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>21 Nov 2023</td><td>21 Nov 2023</td></tr>
+          <tr><td class="id"><span class="tm"><span class="tm-av">O</span>omar.haddad@chalhoubgroup.com</span></td><td><span class="role-pill">Merchant</span></td><td>21 Nov 2023</td><td>21 Nov 2023</td></tr>
+          </tbody>
+        </table>
+        <div class="pager">
+          <button>‹ Previous</button>
+          <button class="active">1</button><button>2</button><button>3</button>
+          <button class="np">Next ›</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 </div>
 
@@ -1138,7 +1316,7 @@ input, textarea { font-family: inherit; }
     <div class="ic" style="background: var(--status-success); color: var(--status-success-ink);"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6L9 17l-5-5"></path></svg></div>
     <h2>Campaign Confirmed</h2>
     <p class="msub">Your campaign has been confirmed.<br>You will be notified once it goes live with the bank.</p>
-    <div class="confirm-row"><div><div class="ck">Campaign</div><div class="cv" id="confirmed-name">Summer Grocery Cashback</div></div><span class="pill-status approved"><span class="dot"></span>Approved</span></div>
+    <div class="confirm-row"><div><div class="ck">Campaign</div><div class="cv" id="confirmed-name">Level Shoes Season Launch</div></div><span class="pill-status approved"><span class="dot"></span>Approved</span></div>
     <button class="btn btn-ghost btn-block" onclick="closeModal('modal-confirmed')">Close</button>
   </div>
 </div>
@@ -1154,20 +1332,20 @@ input, textarea { font-family: inherit; }
         <h4>Campaign Details</h4>
         <div class="bsub">Basic information about your campaign</div>
         <div class="kv"><span class="k">Goal</span><span class="v">Acquire new customers</span></div>
-        <div class="kv"><span class="k">Campaign Name</span><span class="v">Summer Grocery Cashback</span></div>
-        <div class="kv"><span class="k">Budget</span><span class="v">AED 20,000</span></div>
+        <div class="kv"><span class="k">Campaign Name</span><span class="v">Level Shoes Season Launch</span></div>
+        <div class="kv"><span class="k">Budget</span><span class="v"><span class="ccy">AED</span> 20,000</span></div>
       </div>
       <div class="req-block">
         <h4>Audience</h4>
         <div class="bsub">We'll reach customers who already shop in these categories</div>
-        <div class="kv"><span class="k">Categories</span><span class="kv-chips"><span class="c">Grocery</span><span class="c">Bakery</span><span class="c">Beverages</span></span></div>
+        <div class="kv"><span class="k">Categories</span><span class="kv-chips"><span class="c">Footwear</span><span class="c">Fashion</span><span class="c">Luxury</span></span></div>
       </div>
       <div class="req-block">
         <h4>Customer Info</h4>
         <div class="bsub">Key insights about your target customers</div>
         <div class="kv"><span class="k">Channel</span><span class="v">Online</span></div>
-        <div class="kv"><span class="k">Avg purchase value</span><span class="v">AED 200</span></div>
-        <div class="kv"><span class="k">Average customer LTV</span><span class="v">AED 4,800</span></div>
+        <div class="kv"><span class="k">Avg purchase value</span><span class="v"><span class="ccy">AED</span> 200</span></div>
+        <div class="kv"><span class="k">Average customer LTV</span><span class="v"><span class="ccy">AED</span> 4,800</span></div>
       </div>
       <div class="req-block">
         <h4>Activity</h4>
@@ -1196,10 +1374,46 @@ input, textarea { font-family: inherit; }
   </div>
 </div>
 
+<div class="overlay" id="modal-brand">
+  <div class="modal modal-summary">
+    <div class="sum-head">
+      <div><h3>Add brand</h3><p>Add a brand you operate, its Merchant ID, and its POS IDs.</p></div>
+      <button class="x" onclick="closeModal('modal-brand')"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--space-5);">
+      <div class="field-line"><label>Brand logo (optional)</label>
+        <label class="brand-logo-lg" title="Upload logo"><span id="nb-logo-ph"></span><input type="file" accept="image/*" hidden onchange="nbLogoPick(event)"></label>
+      </div>
+      <div class="field-line"><label>Brand name</label><input id="nb-name" placeholder="e.g. Tanagra"></div>
+      <div class="field-line"><label>Merchant ID</label><input id="nb-mid" placeholder="e.g. MID-0000"></div>
+      <div class="field-line">
+        <label>POS IDs · add one or more</label>
+        <div class="posadd-row">
+          <input id="nb-pos" placeholder="e.g. POS-0000" onkeydown="if(event.key==='Enter'){event.preventDefault();addNbPos();}">
+          <button class="btn btn-ghost" type="button" onclick="addNbPos()">Add</button>
+        </div>
+        <div class="pos-chips" id="nb-pos-chips" style="margin-top:10px;"></div>
+      </div>
+    </div>
+    <div class="modal-actions" style="margin-top:var(--space-6);">
+      <button class="btn btn-ghost" onclick="closeModal('modal-brand')">Cancel</button>
+      <button class="btn btn-primary" onclick="saveBrand()">Add brand</button>
+    </div>
+  </div>
+</div>
+
 <script>
 /* ============================================================
    Lune Pulse — Merchant demo data + app logic (self-contained)
    ============================================================ */
+
+/* ---------- Login / merchant / currency state ----------
+   Login only — no sign-up. Lune issues credentials and assigns the region
+   + currency, shown read-only (the merchant cannot change them). One login
+   = one merchant (a retail group) that owns multiple brands underneath it. */
+const LOGIN = { regionLabel: 'United Arab Emirates', regionShort: 'UAE', currency: 'AED' };
+const MERCHANT = { name: 'Chalhoub Group' };
+let CCY = LOGIN.currency;
 
 /* ---------- Category icons (inlined — no runtime fetch) ---------- */
 const ICON_SVGS = {
@@ -1248,6 +1462,7 @@ function go(screen) {
     'campaign-requests': 'nav-campaigns',
     'wizard': 'nav-campaigns',
     'recommendation': 'nav-campaigns',
+    'profile': 'nav-profile',
   };
   document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
   const active = document.getElementById(map[screen]);
@@ -1261,14 +1476,14 @@ document.addEventListener('click', (e) => {
 
 /* ---------- Campaigns (overview) ---------- */
 const CAMPAIGNS = [
-  { name: 'Summer Grocery Cashback', cashback: '10%', dates: '1 Jul – 31 Aug', bank: 'Abu Dhabi Islamic Bank', icon: 'grocery', color: 'var(--cat-grocery)', status: 'live', img: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Weekend Big Shop Bonus', cashback: '8%', dates: '1 May – 30 Jun', bank: 'Ajman Bank', icon: 'grocery', color: 'var(--cat-grocery)', status: 'live', img: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Back-to-School Essentials', cashback: '12%', dates: '15 Aug – 15 Sep', bank: 'American Express', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Fresh Produce Boost', cashback: '9%', dates: '1 Jun – 31 Jul', bank: 'D360 Bank', icon: 'grocery', color: 'var(--cat-grocery)', status: 'live', img: 'https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Online Order Cashback', cashback: '11%', dates: '10 Jun – 10 Jul', bank: 'Beyon Money', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1601598851547-4302969d0614?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Home Essentials Saver', cashback: '7%', dates: '1 Jul – 30 Sep', bank: 'Commercial Bank of Dubai', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1584680226833-0d680d0a0794?auto=format&fit=crop&w=800&q=60' },
-  { name: 'Ramadan Essentials', cashback: '12%', dates: '1 Mar – 30 Mar', bank: 'Abu Dhabi Islamic Bank', icon: 'grocery', color: 'var(--cat-grocery)', status: 'completed', img: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&w=800&q=60' },
-  { name: 'New Year Pantry Restock', cashback: '9%', dates: '2 Jan – 31 Jan', bank: 'Ajman Bank', icon: 'grocery', color: 'var(--cat-grocery)', status: 'completed', img: 'https://images.unsplash.com/photo-1506617420156-8e4536971650?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Level Shoes Season Launch', brand: 'Level Shoes', cashback: '10%', dates: '1 Jul – 31 Aug', bank: 'Emirates NBD', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Faces Beauty Bonus', brand: 'Faces', cashback: '12%', dates: '1 May – 30 Jun', bank: 'Mashreq', icon: 'wellness', color: 'var(--cat-wellness)', status: 'live', img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Sephora Summer Glow', brand: 'Sephora', cashback: '8%', dates: '15 Jun – 15 Aug', bank: 'Abu Dhabi Islamic Bank', icon: 'wellness', color: 'var(--cat-wellness)', status: 'live', img: 'https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Ounass Luxury Weekend', brand: 'Ounass', cashback: '9%', dates: '1 Jun – 31 Jul', bank: 'First Abu Dhabi Bank', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Level Shoes VIP Rewards', brand: 'Level Shoes', cashback: '11%', dates: '10 Jun – 10 Jul', bank: 'ADCB', icon: 'shopping', color: 'var(--cat-shopping)', status: 'live', img: 'https://images.unsplash.com/photo-1449505278894-297fdb3edbc1?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Sephora Fragrance Fest', brand: 'Sephora', cashback: '7%', dates: '1 Jul – 30 Sep', bank: 'Dubai Islamic Bank', icon: 'wellness', color: 'var(--cat-wellness)', status: 'live', img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Faces Eid Beauty Edit', brand: 'Faces', cashback: '12%', dates: '1 Mar – 30 Mar', bank: 'Emirates NBD', icon: 'wellness', color: 'var(--cat-wellness)', status: 'completed', img: 'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=800&q=60' },
+  { name: 'Ounass New Season Preview', brand: 'Ounass', cashback: '9%', dates: '2 Jan – 31 Jan', bank: 'Mashreq', icon: 'shopping', color: 'var(--cat-shopping)', status: 'completed', img: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&q=60' },
 ];
 
 const PILL = {
@@ -1288,6 +1503,7 @@ function offerCard(c) {
     <div class="offer-hero" style="background:${tint(c.color)};">${catIcon(c.icon, c.color, 44)}<img src="${c.img}" alt="" loading="lazy" onerror="this.remove();"></div>
     <div class="offer-body">
       <div class="offer-title-row"><h3>${c.name}</h3>${PILL[c.status]}</div>
+      <div class="chips"><span class="chip">${c.brand}</span></div>
       <div class="offer-meta">
         <div><div class="lbl">Cashback</div><div class="val">${c.cashback}</div></div>
         <div><div class="lbl">Duration</div><div class="val">${c.dates}</div></div>
@@ -1305,12 +1521,12 @@ function renderOverview(filter) {
 
 /* ---------- Campaign requests ---------- */
 const REQUESTS = [
-  { name: 'Summer Grocery Cashback', goal: 'Acquire new customers', created: '9 May 2026', status: 'ready' },
-  { name: 'New Customer Acquisition — Q3', goal: 'Acquire new customers', created: '2 Jun 2026', status: 'review' },
-  { name: 'Ramadan Essentials Push', goal: 'Increase transaction frequency', created: '14 Feb 2026', status: 'approved' },
-  { name: 'Weekend Footfall Booster', goal: 'Win back lapsed customers', created: '21 Apr 2026', status: 'ready' },
-  { name: 'Lapsed Shopper Win-back', goal: 'Win back lapsed customers', created: '5 Jun 2026', status: 'review' },
-  { name: 'Eid Shopping Festival', goal: 'Grow average spend', created: '3 Mar 2026', status: 'approved' },
+  { name: 'Level Shoes Season Launch', brand: 'Level Shoes', goal: 'Acquire new customers', created: '9 May 2026', status: 'ready' },
+  { name: 'Faces Summer Beauty Bonus', brand: 'Faces', goal: 'Acquire new customers', created: '2 Jun 2026', status: 'review' },
+  { name: 'Sephora Rewards Week', brand: 'Sephora', goal: 'Increase transaction frequency', created: '14 Feb 2026', status: 'approved' },
+  { name: 'Ounass Luxury Weekend', brand: 'Ounass', goal: 'Win back lapsed customers', created: '21 Apr 2026', status: 'ready' },
+  { name: 'Faces Beauty Treat', brand: 'Faces', goal: 'Win back lapsed customers', created: '5 Jun 2026', status: 'review' },
+  { name: 'Level Kids Eid Festival', brand: 'Level Kids', goal: 'Grow average spend', created: '3 Mar 2026', status: 'approved' },
 ];
 
 function reqCard(r) {
@@ -1321,6 +1537,7 @@ function reqCard(r) {
   return `<button class="req-card s-${r.status}" ${nav}>
     <div class="req-card-top">${PILL[r.status]}<span class="created"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 9h18M8 3v4M16 3v4"></path></svg>Created On <b>${r.created}</b></span></div>
     <h3>${r.name}</h3>
+    <div class="chips"><span class="chip">${r.brand}</span></div>
     <span class="btn btn-soft">View Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span>
   </button>`;
 }
@@ -1426,10 +1643,10 @@ function updateEstimate() {
   document.getElementById('rv-reach').textContent = `${recFmt(reachLow)} – ${recFmt(reachHigh)}`;
 
   // Potential Revenue = Potential Reach × minimum transaction value
-  document.getElementById('rv-rev').textContent = `AED ${recFmt(reachLow * minTxn)} – AED ${recFmt(reachHigh * minTxn)}`;
+  document.getElementById('rv-rev').textContent = `${CCY} ${recFmt(reachLow * minTxn)} – ${CCY} ${recFmt(reachHigh * minTxn)}`;
 
   // Revenue ceiling = Budget / Cashback Rate
-  document.getElementById('rv-ceiling').textContent = rate > 0 ? `AED ${recFmt(budget / rate)}` : '—';
+  document.getElementById('rv-ceiling').textContent = rate > 0 ? `${CCY} ${recFmt(budget / rate)}` : '—';
 }
 function recShowStep(n) {
   document.getElementById('rec-step-1').style.display = n === 1 ? '' : 'none';
@@ -1463,36 +1680,36 @@ renderGoals();
 updateEstimate();
 
 /* ---------- Brand asset picker (campaign offer + logo) ---------- */
-/* Marhaba Mart runs offers across several merchant types — each carries its
+/* Chalhoub Group runs offers across several merchant types — each carries its
    own creative, copy, category chips and icon, applied to the live preview. */
 const OFFERS = {
-  dining: {
-    label: 'Dining', icon: 'dining', chips: ['Dining', 'Restaurants'],
-    title: '15% Cashback on Dining', desc: 'Reward members for every meal out with cashback at Marhaba Mart partner restaurants.',
-    img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&h=300&q=70',
+  fashion: {
+    label: 'Fashion', icon: 'shopping', chips: ['Fashion', 'Retail'],
+    title: '15% Cashback on Fashion', desc: 'Earn cashback across Chalhoub Group fashion brands.',
+    img: 'https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=800&h=300&q=70',
   },
-  shopping: {
-    label: 'Shopping', icon: 'shopping', chips: ['Shopping', 'Retail'],
-    title: '10% Cashback on Shopping', desc: 'Drive footfall and repeat spend across Marhaba Mart fashion and retail stores.',
-    img: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&h=300&q=70',
+  beauty: {
+    label: 'Beauty', icon: 'wellness', chips: ['Beauty', 'Skincare'],
+    title: 'Beauty Rewards at Faces', desc: 'Reward beauty and skincare spend across Faces and Wojooh.',
+    img: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&h=300&q=70',
   },
-  gym: {
-    label: 'Gym', icon: 'wellness', chips: ['Fitness', 'Gym'],
-    title: 'AED 50 Back on Gym Memberships', desc: 'Encourage healthy habits with cashback on gym and fitness memberships.',
-    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&h=300&q=70',
+  footwear: {
+    label: 'Footwear', icon: 'shopping', chips: ['Footwear', 'Luxury'],
+    title: '10% Back at Level Shoes', desc: 'Earn cashback on every purchase at Level Shoes.',
+    img: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?auto=format&fit=crop&w=800&h=300&q=70',
   },
-  coffeeshop: {
-    label: 'Coffee Shop', icon: 'dining', chips: ['Coffee', 'Café'],
-    title: 'Buy 5 Get 1 Free Coffee', desc: 'Boost daily visits with a coffee loyalty reward across Marhaba Mart cafés.',
-    img: 'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=800&h=300&q=70',
+  fragrance: {
+    label: 'Fragrance', icon: 'wellness', chips: ['Fragrance', 'Beauty'],
+    title: 'Fragrance Cashback', desc: 'Reward fragrance purchases across Chalhoub Group beauty brands.',
+    img: 'https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=800&h=300&q=70',
   },
-  wellness: {
-    label: 'Wellness', icon: 'wellness', chips: ['Wellness', 'Spa'],
-    title: '12% Cashback on Wellness', desc: 'Reward spa, salon and wellness spend across Marhaba Mart partner venues.',
-    img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&h=300&q=70',
+  luxury: {
+    label: 'Luxury', icon: 'shopping', chips: ['Luxury', 'Fashion'],
+    title: 'Luxury Weekend at Ounass', desc: 'Premium cashback on luxury fashion at Ounass.',
+    img: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&h=300&q=70',
   },
 };
-// Merchant brand logos for the Marhaba Mart campaign creative
+// Merchant brand logos for the Chalhoub Group campaign creative
 const LOGO_ASSETS = [
   { name: 'Carrefour', url: 'https://www.google.com/s2/favicons?domain=carrefour.fr&sz=256' },
   { name: 'Waitrose', url: 'https://www.google.com/s2/favicons?domain=waitrose.com&sz=256' },
@@ -1529,10 +1746,10 @@ function pickOffer(key) {
   const g = document.getElementById('rec-graphic');
   g.classList.add('filled');
   g.style.backgroundImage = `url("${o.img}")`;
-  const nm = document.getElementById('rec-offer-name'); if (nm) nm.value = o.title;
+  const offerTitle = o.title.replace('{CCY}', CCY); const nm = document.getElementById('rec-offer-name'); if (nm) nm.value = offerTitle;
   const ds = document.getElementById('rec-offer-desc'); if (ds) ds.value = o.desc;
   const h = document.getElementById('rec-prev-hero'); if (h) h.style.backgroundImage = `url("${o.img}")`;
-  document.getElementById('rec-prev-title').textContent = o.title;
+  document.getElementById('rec-prev-title').textContent = offerTitle;
   document.getElementById('rec-prev-desc').textContent = o.desc;
   document.getElementById('rec-prev-chips').innerHTML = o.chips.map((c) => `<span class="chip">${c}</span>`).join('');
   const pl = document.getElementById('rec-prev-logo');
@@ -1679,7 +1896,8 @@ const mkPills = (id, options, selIdx, multi) => {
   document.getElementById(id).innerHTML = options.map((o, i) =>
     `<button class="pick-pill${i === selIdx ? ' sel' : ''}" onclick="${multi ? "this.classList.toggle('sel')" : 'selectOne(this)'}">${o}</button>`).join('');
 };
-mkPills('spend-row', ['Under AED 50', 'AED 50 – 100', 'AED 100 – 200', 'AED 200 – 500', 'AED 500+'], 3, false);
+function renderSpendPills(){ mkPills('spend-row', ['Under '+CCY+' 50', CCY+' 50 – 100', CCY+' 100 – 200', CCY+' 200 – 500', CCY+' 500+'], 3, false); }
+renderSpendPills();
 mkPills('freq-row', ['Daily', '2–3 times a week', 'Once a week', 'A few times a month', 'Rarely'], 2, false);
 mkPills('channel-row', ['Online', 'In-store', 'Both Online & In-store'], 2, false);
 
@@ -1719,6 +1937,74 @@ function wizStep(dir) {
 }
 function resetWizard() { step = 1; renderWiz(); resetBrands(); }
 renderWiz();
+function applyContext() {
+  CCY = LOGIN.currency;
+  document.querySelectorAll('.ccy').forEach((el) => { el.textContent = CCY; });
+  if (typeof renderSpendPills === 'function') renderSpendPills();
+  if (typeof updateEstimate === 'function') updateEstimate();
+  const mr = document.getElementById('merchant-region');
+  if (mr) mr.textContent = MERCHANT.name + ' · ' + LOGIN.regionShort;
+  const g = document.getElementById('greeting');
+  if (g) g.textContent = 'Hello, ' + MERCHANT.name;
+  const pn = document.getElementById('prof-name');
+  if (pn) pn.textContent = MERCHANT.name;
+  const pr = document.getElementById('prof-region');
+  if (pr) pr.textContent = LOGIN.regionLabel;
+  if (typeof renderBrands === 'function') renderBrands();
+}
+function togglePw(btn) { const i = btn.parentNode.querySelector('input'); if (i) i.type = i.type === 'password' ? 'text' : 'password'; }
+
+/* ---------- Merchant Brands + Merchant/POS IDs (one merchant, many brands) ---------- */
+const LOGO_PH = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>';
+const favicon = (d) => 'https://www.google.com/s2/favicons?domain=' + d + '&sz=128';
+let MERCHANT_BRANDS = [
+  { name: 'Level Shoes', logo: favicon('levelshoes.com'), merchantId: 'MID-CHL-1001', posIds: ['POS-LVL-2201', 'POS-LVL-2202', 'POS-LVL-2203'] },
+  { name: 'Faces',       logo: favicon('faces.com'),      merchantId: 'MID-CHL-1002', posIds: ['POS-FCS-3310', 'POS-FCS-3311'] },
+  { name: 'Sephora',     logo: favicon('sephora.ae'),     merchantId: 'MID-CHL-1003', posIds: ['POS-SEP-4410', 'POS-SEP-4411', 'POS-SEP-4412'] },
+  { name: 'Ounass',      logo: favicon('ounass.com'),     merchantId: 'MID-CHL-1004', posIds: ['POS-OUN-5510'] },
+];
+let nbPos = [];
+let nbLogo = '';
+function renderBrands() {
+  const host = document.getElementById('brands-list');
+  if (!host) return;
+  if (!MERCHANT_BRANDS.length) { host.innerHTML = '<div class="brands-empty">No brands yet. Add a brand and its Merchant / POS IDs to start matching transactions.</div>'; return; }
+  host.innerHTML = MERCHANT_BRANDS.map((b, i) => {
+    const chips = b.posIds.map((p, pi) =>
+      `<span class="pos-chip">${escHtml(p)}<span class="x" role="button" tabindex="0" onclick="removePos(${i}, ${pi})" aria-label="Remove ${escHtml(p)}">&times;</span></span>`).join('');
+    return `<div class="brand-item">
+      <div class="brand-item-head">
+        <span class="brand-item-name"><label class="brand-logo-sm" title="Change logo" onclick="event.stopPropagation()">${b.logo ? '<img src="' + escHtml(b.logo) + '" alt="" onerror="this.outerHTML=LOGO_PH">' : LOGO_PH}<input type="file" accept="image/*" hidden onchange="brandLogo(${i}, event)"></label>${escHtml(b.name)}</span>
+        <button class="linklike" style="font-size:13px;" onclick="removeBrand(${i})">Remove brand</button>
+      </div>
+      <div class="brand-ids">
+        <div>
+          <div class="lbl">Merchant ID</div>
+          <input class="mid-input" value="${escHtml(b.merchantId)}" onchange="setMid(${i}, this.value)" aria-label="Merchant ID for ${escHtml(b.name)}">
+        </div>
+        <div>
+          <div class="lbl">POS IDs <span class="hint">· matched for qualifying transactions</span></div>
+          <div class="pos-chips">
+            ${chips}
+            <input class="pos-inline" placeholder="+ Add POS ID" onkeydown="if(event.key==='Enter'){addPos(${i}, this);}" aria-label="Add POS ID to ${escHtml(b.name)}">
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+function setMid(i, v) { if (MERCHANT_BRANDS[i]) MERCHANT_BRANDS[i].merchantId = v.trim(); }
+function addPos(i, inp) { const v = inp.value.trim(); if (!v) return; if (MERCHANT_BRANDS[i] && !MERCHANT_BRANDS[i].posIds.includes(v)) MERCHANT_BRANDS[i].posIds.push(v); inp.value = ''; renderBrands(); }
+function removePos(i, pi) { if (MERCHANT_BRANDS[i]) { MERCHANT_BRANDS[i].posIds.splice(pi, 1); renderBrands(); } }
+function removeBrand(i) { MERCHANT_BRANDS.splice(i, 1); renderBrands(); }
+function openAddBrand() { nbPos = []; nbLogo = ''; document.getElementById('nb-name').value = ''; document.getElementById('nb-mid').value = ''; document.getElementById('nb-pos').value = ''; renderNbPos(); renderNbLogo(); openModal('modal-brand'); }
+function renderNbLogo() { const el = document.getElementById('nb-logo-ph'); if (el) el.innerHTML = nbLogo ? '<img src="' + nbLogo + '" alt="">' : LOGO_PH; }
+function nbLogoPick(ev) { const f = ev.target.files && ev.target.files[0]; if (!f) return; const r = new FileReader(); r.onload = () => { nbLogo = r.result; renderNbLogo(); }; r.readAsDataURL(f); }
+function brandLogo(i, ev) { const f = ev.target.files && ev.target.files[0]; if (!f || !MERCHANT_BRANDS[i]) return; const r = new FileReader(); r.onload = () => { MERCHANT_BRANDS[i].logo = r.result; renderBrands(); }; r.readAsDataURL(f); }
+function renderNbPos() { document.getElementById('nb-pos-chips').innerHTML = nbPos.map((p, i) => `<span class="pos-chip">${escHtml(p)}<span class="x" role="button" tabindex="0" onclick="nbPos.splice(${i},1);renderNbPos();" aria-label="Remove ${escHtml(p)}">&times;</span></span>`).join(''); }
+function addNbPos() { const inp = document.getElementById('nb-pos'); const v = inp.value.trim(); if (!v) return; if (!nbPos.includes(v)) nbPos.push(v); inp.value = ''; renderNbPos(); inp.focus(); }
+function saveBrand() { const name = document.getElementById('nb-name').value.trim(); const mid = document.getElementById('nb-mid').value.trim(); const pending = document.getElementById('nb-pos').value.trim(); if (pending && !nbPos.includes(pending)) nbPos.push(pending); if (!name) { document.getElementById('nb-name').focus(); return; } MERCHANT_BRANDS.push({ name: name, logo: nbLogo, merchantId: mid, posIds: nbPos.slice() }); closeModal('modal-brand'); renderBrands(); }
+applyContext();
 </script>
 </body>
 </html>
