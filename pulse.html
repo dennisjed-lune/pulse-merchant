@@ -141,7 +141,11 @@ code, pre, kbd { font-family: var(--font-mono); }
   display: flex; align-items: center; gap: var(--space-3);
   padding: var(--space-4) var(--space-5);
   border-top: var(--border-hairline) solid var(--border-subtle);
+  width: 100%; text-align: left; background: none; border-left: 0; border-right: 0; border-bottom: 0;
+  cursor: pointer; font: inherit; color: inherit; transition: background var(--dur-fast);
 }
+.sb-bottom:hover { background: var(--surface-muted); }
+.app[data-sidebar="ink"] .sb-bottom:hover { background: rgba(255,255,255,0.07); }
 .avatar {
   width: 40px; height: 40px; border-radius: var(--radius-pill); flex: 0 0 40px;
   background: var(--lune-teal); color: var(--lune-mint);
@@ -830,18 +834,14 @@ input, textarea { font-family: inherit; }
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8M8 12h8"></path></svg>
         Campaign Requests
       </button>
-      <button class="nav-item" data-nav="profile" id="nav-profile">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-        Profile
-      </button>
     </nav>
-    <div class="sb-bottom">
+    <button class="sb-bottom" data-nav="profile" title="View profile">
       <div class="avatar">DJ</div>
       <div>
         <div class="name">Dennis Jedburgh</div>
-        <div class="sub"><span id="merchant-region">Chalhoub Group UAE</span> · <button class="linklike" data-nav="profile">View profile</button></div>
+        <div class="sub"><span id="merchant-region">Chalhoub Group UAE</span> · <span class="linklike">View profile</span></div>
       </div>
-    </div>
+    </button>
   </aside>
 
   <main class="main">
@@ -1462,7 +1462,6 @@ function go(screen) {
     'campaign-requests': 'nav-campaigns',
     'wizard': 'nav-campaigns',
     'recommendation': 'nav-campaigns',
-    'profile': 'nav-profile',
   };
   document.querySelectorAll('.nav-item').forEach((n) => n.classList.remove('active'));
   const active = document.getElementById(map[screen]);
